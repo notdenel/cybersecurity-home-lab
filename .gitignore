@@ -1,0 +1,31 @@
+# virtual machine images and state
+*.iso
+*.7z
+*.ova
+*.ovf
+*.vmx
+*.vmdk
+*.vmem
+*.vmsn
+*.vmss
+*.nvram
+*.lck
+
+# credentials and local secrets
+.env
+.env.*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# local drafts
+drafts/
+
+# project README template
+PROJECT-TEMPLATE.md

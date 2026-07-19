@@ -1,0 +1,54 @@
+=== CAPTURE TIME ===
+2026-07-17T04:01:19+00:00
+
+=== HOST ===
+ubuntu-target
+
+=== OPERATING SYSTEM ===
+Ubuntu 24.04.4 LTS
+
+=== NETWORK ADDRESSES ===
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+ens33            UP             192.168.209.129/24 metric 100 fe80::20c:29ff:fefe:b170/64 
+ens37            UP             10.10.10.10/24 fe80::20c:29ff:fefe:b17a/64 
+
+=== ROUTING TABLE ===
+default via 192.168.209.2 dev ens33 proto dhcp src 192.168.209.129 metric 100 
+10.10.10.0/24 dev ens37 proto kernel scope link src 10.10.10.10 
+192.168.209.0/24 dev ens33 proto kernel scope link src 192.168.209.129 metric 100 
+192.168.209.2 dev ens33 proto dhcp scope link src 192.168.209.129 metric 100 
+
+=== SERVICE STATES ===
+nginx active:  inactive
+nginx enabled: disabled
+ssh active:    active
+ssh enabled:   enabled
+
+=== LISTENING SOCKETS ===
+Netid State  Recv-Q Send-Q         Local Address:Port Peer Address:PortProcess                                                
+udp   UNCONN 0      0                 127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=684,fd=16))             
+udp   UNCONN 0      0              127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=684,fd=14))             
+udp   UNCONN 0      0      192.168.209.129%ens33:68        0.0.0.0:*    users:(("systemd-network",pid=636,fd=25))             
+tcp   LISTEN 0      4096           127.0.0.53%lo:53        0.0.0.0:*    users:(("systemd-resolve",pid=684,fd=15))             
+tcp   LISTEN 0      4096              127.0.0.54:53        0.0.0.0:*    users:(("systemd-resolve",pid=684,fd=17))             
+tcp   LISTEN 0      4096                 0.0.0.0:22        0.0.0.0:*    users:(("sshd",pid=2041,fd=3),("systemd",pid=1,fd=80))
+tcp   LISTEN 0      4096                    [::]:22           [::]:*    users:(("sshd",pid=2041,fd=4),("systemd",pid=1,fd=84))
+
+=== UFW STATUS ===
+Status: active
+Logging: on (medium)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp on ens37            ALLOW IN    10.10.10.20                # allow SSH from kali on host-only lab
+
+
+=== UFW RULES ===
+Status: active
+
+     To                         Action      From
+     --                         ------      ----
+[ 1] 22/tcp on ens37            ALLOW IN    10.10.10.20                # allow SSH from kali on host-only lab
+

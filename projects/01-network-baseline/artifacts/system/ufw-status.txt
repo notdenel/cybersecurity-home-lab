@@ -1,0 +1,9 @@
+Status: active
+Logging: on (medium)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp on ens37            ALLOW IN    10.10.10.20                # allow SSH from kali on host-only lab
+
